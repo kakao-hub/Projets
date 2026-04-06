@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" contact.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+      <div class="content">
+        <nav>
+            <a href="cv.html">CV</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        <header>
+    <h1>Me contacter</h1>
+        </header>
+        <form method='post' name='contactForm'>
+        <input type='hidden' name='form-name' value='contactForm' />
+          <label for="email" class="socialNetwork">
+            <span>Email </span>
+            <input type="email" name="email" placeholder="oyama.kaito.2707@gmail.com" required>
+          </label>
+
+          <br>
+          <label for="name">
+            <span> Nom</span>
+            <input type="text" name="name" placeholder="Kaito Mayoral Oyama" required>
+          </label>
+          <br>
+
+          <label for="object">
+            <span> Objet</span>
+            <select name="object" required>
+              <option value="first">Premier contact</option>
+              <option value="deb">Débauchage</option>
+              <option value="help">Demande d'aide</option>
+              <option value="others">Autres</option>
+            </select>
+          </label>
+          <br>
+
+          <label for="priority">
+            <span> Priorité</span>
+            <select name="priority" required>
+              <option value="basse">Basse</option>
+              <option value="moyen">Moyen</option>
+              <option value="haute">Haute</option>
+            </select>
+          </label>
+          <br>
+
+          <label for="content">
+            <span>Contenu du message</span>
+            <textarea name="content" rows="10" required></textarea>
+          </label>
+          <br>
+
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male" required />
+        <br>
+        <label for="female">Female</label>
+         <input type="radio" name="gender" id="female" value="female" />
+
+          <br>
+          <label for="birthday">
+            <span>Date de naissance</span>
+            <input type="date" name="birthday">
+          </label>
+
+          <button type="submit">Envoyer</button>
+
+        </form>
+        
+      </div>
+      
+    </div>
+    
+</body>
+</html>
