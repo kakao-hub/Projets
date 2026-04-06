@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CTO de ta santé posturale – Défi Decathlon Digital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS EXTERNE -->
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+
+<!-- SPLASH KLUB -->
+<div id="splash" class="splash">
+    <!-- Logo K seul -->
+    <img src="logo K.png" alt="K" class="logo-k">
+    <!-- Logo KLUB complet -->
+    <img src="logo texte.png" alt="KLUB" class="logo-klub">
+</div>
+
+<div class="app">
+
+    <div class="app-inner">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">D</div>
+                <div class="logo-text">
+                    <span>DECATHLON DIGITAL</span>
+                    <span>Deviens le CTO de ta santé posturale</span>
+                </div>
+            </div>
+            <div class="header-tagline">
+                <div><strong>Nuit de l’Info 2025</strong> – Défi Decathlon</div>
+                <small>Profilage sportif • Conseils personnalisés • Visualisation • Lien produits</small>
+                <!-- Si tu veux un retour vers ton site principal -->
+                <!-- <a href="index.html" class="back-link">↩ Retour au site principal</a> -->
+            </div>
+        </header>
+
+        <main class="layout">
+            <!-- COLONNE GAUCHE : QCM / PROFIL -->
+            <section class="col">
+                <section class="hero">
+                    <div class="hero-eyebrow">
+                        <span class="badge">🏋</span>
+                        <span>Connecte le code à ta posture pour éviter les blessures</span>
+                    </div>
+                    <h1>
+                        Deviens le <span class="highlight">CTO</span> de
+                        ta <span class="highlight">santé posturale</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Remplis un rapide <strong>profil sportif</strong>, choisis un
+                        <strong>mouvement clé</strong> (squat, pompe, gainage, posture assise) et
+                        récupère des instructions <strong>personnalisées</strong> avec
+                        des visuels et une sélection d’<strong>équipements Decathlon</strong>.
+                    </p>
+                    <div class="stepper" aria-label="Étapes du parcours">
+                        <div class="step-pill step-pill--active" id="step-pill-1">
+                            <span class="step-index">1</span>
+                            <span>Profilage sportif</span>
+                        </div>
+                        <div class="step-pill" id="step-pill-2">
+                            <span class="step-index">2</span>
+                            <span>Conseils & posture</span>
+                        </div>
+                        <div class="step-pill" id="step-pill-3">
+                            <span class="step-index">3</span>
+                            <span>Visualisation & produits</span>
+                        </div>
+                    </div>
+                    <p class="hero-note">
+                        Pensé pour tourner en pur front :
+                        <code>HTML + CSS + JS</code>, aucun backend requis.
+                    </p>
+
+                    <button id="snake-open-btn" class="btn btn-outline btn-small">
+                        Hidden Snake 🐍
+                    </button>
+                </section>
+
+                <section class="card">
+                    <h2 class="card-title">Niveau 1 – Profilage sportif</h2>
+                    <p class="card-subtitle">
+                        Ce QCM permet de mieux <strong>contextualiser</strong> les mouvements proposés
+                        (intensité, volume, contraintes).
+                    </p>
+
+                    <form id="profile-form" class="qcm-form">
+                        <div class="field-group">
+                            <p class="field-label">
+                                Ton niveau global
+                                <span class="hint">(sur les mouvements de base au poids du corps)</span>
+                            </p>
+                            <div class="choice-row">
+                                <label class="radio-pill">
+                                    <input type="radio" name="level" value="beginner" required>
+                                    <span class="dot"></span>
+                                    <span class="label">Débutant</span>
+                                    <span class="level-tag">Je démarre / reprise</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="level" value="intermediate">
+                                    <span class="dot"></span>
+                                    <span class="label">Intermédiaire</span>
+                                    <span class="level-tag">Je bouge régulièrement</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="level" value="advanced">
+                                    <span class="dot"></span>
+                                    <span class="label">Avancé</span>
+                                    <span class="level-tag">Sportif régulier / intensif</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <p class="field-label">
+                                Ton sport principal
+                                <span class="hint">(au quotidien ou que tu aimerais pratiquer)</span>
+                            </p>
+                            <select name="sport" class="select-input" required>
+                                <option value="" disabled selected>Choisis une option</option>
+                                <option value="musculation">Musculation / renforcement</option>
+                                <option value="course">Course / cardio</option>
+                                <option value="sports_collectifs">Sports collectifs</option>
+                                <option value="yoga_pilates">Yoga / Pilates / mobilité</option>
+                                <option value="autre">Autre / je ne sais pas encore</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <p class="field-label">
+                                Ton objectif principal
+                                <span class="hint">(ici on vise surtout la prévention des blessures)</span>
+                            </p>
+                            <div class="choice-row">
+                                <label class="radio-chip">
+                                    <input type="radio" name="goal" value="sante" required>
+                                    <span class="label">Santé / bien-être</span>
+                                </label>
+                                <label class="radio-chip">
+                                    <input type="radio" name="goal" value="performance">
+                                    <span class="label">Performance / progression</span>
+                                </label>
+                                <label class="radio-chip">
+                                    <input type="radio" name="goal" value="mobilite">
+                                    <span class="label">Mobilité / posture</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <p class="field-label">
+                                Fréquence idéale
+                            </p>
+                            <select name="frequency" class="select-input" required>
+                                <option value="" disabled selected>Combien de séances par semaine ?</option>
+                                <option value="1-2">1 à 2 fois / semaine</option>
+                                <option value="2-3">2 à 3 fois / semaine</option>
+                                <option value="3-4">3 à 4 fois / semaine</option>
+                                <option value="5+">5 fois et plus / semaine</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <p class="field-label">
+                                Contraintes à prendre en compte
+                                <span class="hint">(non médical – pour adapter la posture)</span>
+                            </p>
+                            <select name="constraints" class="select-input">
+                                <option value="aucune" selected>Rien de particulier</option>
+                                <option value="dos">Sensibilité bas du dos</option>
+                                <option value="genoux">Sensibilité genoux</option>
+                                <option value="epaules">Sensibilité épaules / poignets</option>
+                                <option value="fatigue">Fatigue / sédentarité importante</option>
+                            </select>
+                        </div>
+
+                        <div class="qcm-footer">
+                            <small>
+                                👉 Tu pourras modifier ces réponses à tout moment pour voir
+                                comment les conseils évoluent.
+                            </small>
+                            <button type="submit" class="btn btn-primary btn-small">
+                                Générer mon profil
+                            </button>
+                        </div>
+                    </form>
+
+                    <section id="profile-summary" class="profile-summary is-hidden" aria-live="polite">
+                        <h3>Profil détecté</h3>
+                        <p id="profile-text"></p>
+                    </section>
+                </section>
+            </section>
+
+            <!-- COLONNE DROITE : MOUVEMENTS / VISUELS / PRODUITS -->
+            <section class="col">
+                <section id="movement-section" class="card movement-card is-disabled">
+                    <div class="movement-card-header">
+                        <div>
+                            <h2 class="card-title">Niveau 2 – Instructions personnalisées</h2>
+                            <p class="card-subtitle">
+                                Choisis un mouvement et récupère des consignes adaptées à ton profil
+                                pour <strong>éviter les blessures</strong>.
+                            </p>
+                        </div>
+                        <div class="movement-select">
+                            <label for="movement-select" class="field-label" style="margin-bottom: 3px;">
+                                Mouvement
+                            </label>
+                            <select id="movement-select" class="select-input">
+                                <option value="squat">Squat (jambes & gainage)</option>
+                                <option value="pushup">Pompes (haut du corps)</option>
+                                <option value="plank">Gainage planche</option>
+                                <option value="sitting">Posture assise prolongée</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="movement-layout">
+                        <section class="movement-text">
+                            <h3 id="movement-title">Commence par générer ton profil à gauche 👈</h3>
+                            <p id="movement-context" class="movement-context">
+                                Une fois ton profil sportif enregistré, tu verras ici les consignes
+                                détaillées pour le mouvement choisi.
+                            </p>
+
+                            <h4 class="movement-section-title">Position & exécution</h4>
+                            <ol id="movement-steps" class="movement-steps"></ol>
+
+                            <h4 class="movement-section-title">À éviter absolument</h4>
+                            <ul id="movement-mistakes" class="movement-mistakes"></ul>
+
+                            <h4 class="movement-section-title">Volume conseillé</h4>
+                            <p id="movement-volume" class="movement-volume"></p>
+
+                            <h4 class="movement-section-title">Astuces selon ton objectif</h4>
+                            <p id="movement-goal-tip" class="movement-goal-tip"></p>
+                        </section>
+
+                        <aside class="movement-visual-wrapper">
+                            <div class="visual-header">
+                                <span>🧍 Schéma postural simplifié</span>
+                                <span id="visual-status">Vue latérale & frontale</span>
+                            </div>
+                            <div class="movement-visuals" aria-hidden="true">
+                                <!-- SQUAT -->
+                                <figure class="movement-visual movement-visual--active" data-move="squat">
+                                    <div class="visual-grid">
+                                        <!-- Départ -->
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Départ</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <!-- Sol -->
+                                                    <line x1="10" y1="105" x2="110" y2="105" stroke="#1f2937" stroke-width="3"/>
+                                                    <!-- Corps -->
+                                                    <circle cx="60" cy="32" r="10" fill="#22c55e"/>
+                                                    <line x1="60" y1="42" x2="60" y2="72" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Jambes -->
+                                                    <line x1="60" y1="72" x2="48" y2="105" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <line x1="60" y1="72" x2="72" y2="105" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Dos neutre repère -->
+                                                    <line x1="86" y1="40" x2="100" y2="40" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <!-- Bas du squat -->
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Bas du mouvement</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <line x1="10" y1="105" x2="110" y2="105" stroke="#1f2937" stroke-width="3"/>
+                                                    <!-- Corps incliné -->
+                                                    <circle cx="55" cy="40" r="10" fill="#22c55e"/>
+                                                    <line x1="55" y1="50" x2="55" y2="70" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Cuisses parallèles -->
+                                                    <line x1="55" y1="70" x2="80" y2="70" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Jambes -->
+                                                    <line x1="80" y1="70" x2="90" y2="105" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <line x1="55" y1="70" x2="45" y2="105" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Genoux dans l'axe -->
+                                                    <line x1="80" y1="70" x2="90" y2="60" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                                <!-- POMPES -->
+                                <figure class="movement-visual" data-move="pushup">
+                                    <div class="visual-grid">
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Gainage</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <!-- Sol -->
+                                                    <line x1="10" y1="90" x2="110" y2="90" stroke="#1f2937" stroke-width="3"/>
+                                                    <!-- Corps aligné -->
+                                                    <circle cx="30" cy="60" r="8" fill="#22c55e"/>
+                                                    <line x1="38" y1="60" x2="85" y2="60" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Bras -->
+                                                    <line x1="38" y1="60" x2="38" y2="90" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Ligne neutre -->
+                                                    <line x1="30" y1="40" x2="85" y2="40" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Coude à 45°</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <line x1="10" y1="90" x2="110" y2="90" stroke="#1f2937" stroke-width="3"/>
+                                                    <circle cx="35" cy="65" r="8" fill="#22c55e"/>
+                                                    <line x1="43" y1="65" x2="88" y2="65" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Bras à 45° -->
+                                                    <line x1="43" y1="65" x2="30" y2="80" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Croix rouge pour coudes trop ouverts (schéma) -->
+                                                    <line x1="80" y1="35" x2="96" y2="51" stroke="#f97373" stroke-width="2"/>
+                                                    <line x1="96" y1="35" x2="80" y2="51" stroke="#f97373" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                                <!-- GAINAGE PLANCHE -->
+                                <figure class="movement-visual" data-move="plank">
+                                    <div class="visual-grid">
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Epaules–hanches–chevilles</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <line x1="10" y1="90" x2="110" y2="90" stroke="#1f2937" stroke-width="3"/>
+                                                    <!-- Ligne corps -->
+                                                    <circle cx="30" cy="60" r="8" fill="#22c55e"/>
+                                                    <line x1="38" y1="60" x2="90" y2="60" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Coudes sous épaules -->
+                                                    <line x1="38" y1="60" x2="38" y2="80" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="visual-cell">
+                                            <div class="visual-label">À éviter</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <line x1="10" y1="90" x2="110" y2="90" stroke="#1f2937" stroke-width="3"/>
+                                                    <!-- Bassin qui s'effondre -->
+                                                    <circle cx="30" cy="60" r="8" fill="#f97373"/>
+                                                    <path d="M38 60 L80 75" stroke="#f97373" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Croix -->
+                                                    <line x1="75" y1="40" x2="95" y2="60" stroke="#f97373" stroke-width="2"/>
+                                                    <line x1="95" y1="40" x2="75" y2="60" stroke="#f97373" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+
+                                <!-- POSTURE ASSISE -->
+                                <figure class="movement-visual" data-move="sitting">
+                                    <div class="visual-grid">
+                                        <div class="visual-cell">
+                                            <div class="visual-label">Posture neutre</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <!-- Chaise -->
+                                                    <rect x="35" y="70" width="40" height="20" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+                                                    <rect x="35" y="40" width="5" height="30" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+                                                    <!-- Personne -->
+                                                    <circle cx="60" cy="32" r="8" fill="#22c55e"/>
+                                                    <line x1="60" y1="40" x2="60" y2="60" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <line x1="60" y1="60" x2="75" y2="60" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <line x1="75" y1="60" x2="75" y2="80" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
+                                                    <!-- Ecran à hauteur des yeux -->
+                                                    <rect x="80" y="28" width="18" height="14" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="visual-cell">
+                                            <div class="visual-label">À éviter</div>
+                                            <div class="visual-canvas">
+                                                <svg class="visual-svg" viewBox="0 0 120 120">
+                                                    <!-- Chaise -->
+                                                    <rect x="35" y="70" width="40" height="20" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+                                                    <!-- Personne voûtée -->
+                                                    <circle cx="55" cy="32" r="8" fill="#f97373"/>
+                                                    <path d="M55 40 Q48 50 50 60" stroke="#f97373" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                                    <!-- Ecran trop bas -->
+                                                    <rect x="80" y="40" width="18" height="14" fill="#0f172a" stroke="#f97373" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </div>
+                            <p id="movement-caption" class="movement-caption">
+                                Les schémas illustrent simplement les grands repères posturaux :
+                                ils ne remplacent pas l’avis d’un professionnel de santé.
+                            </p>
+                        </aside>
+                    </div>
+                </section>
+
+                <section id="equipment-section" class="card equipment-card is-disabled">
+                    <h2>Level 4 – Lien commercial pertinent (bonus)</h2>
+                    <p class="section-intro">
+                        En fonction du mouvement choisi, on te suggère des produits
+                        <strong>Decathlon</strong> qui sécurisent la posture
+                        (stabilité, confort, amorti, mobilité). Les liens peuvent pointer vers
+                        de vraies fiches produits dans la version finale.
+                    </p>
+
+                    <div id="equipment-grid" class="equipment-grid"></div>
+                </section>
+            </section>
+        </main>
+    </div>
+</div>
+
+<div id="snake-overlay" class="snake-overlay">
+    <div class="snake-modal">
+        <div class="snake-bar">
+            <span>Hidden Snake · retro grid</span>
+            <button id="snake-close-btn" class="snake-close" aria-label="Fermer le jeu">&times;</button>
+        </div>
+        <div class="snake-content">
+            <canvas id="snake-canvas" width="400" height="400"></canvas>
+            <div class="snake-info">
+                <p>Score : <span id="snake-score">0</span></p>
+                <p>Touches : ← ↑ ↓ → pour bouger, <strong>R</strong> pour recommencer, <strong>Échap</strong> pour fermer.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---- STATE ----
+    const LEVEL_LABELS = {
+        beginner: "plutôt débutant",
+        intermediate: "intermédiaire",
+        advanced: "avancé"
+    };
+
+    const GOAL_LABELS = {
+        sante: "santé / bien-être",
+        performance: "performance",
+        mobilite: "mobilité / posture"
+    };
+
+    let currentProfile = null;
+
+    // ---- DATA MOUVEMENTS ----
+    const movementsData = {
+        squat: {
+            name: "Squat",
+            context: "Travail global jambes + fessiers + gainage. C’est un mouvement clé pour les sports de course, sports co et renfo.",
+            baseSteps: [
+                "Place tes pieds écartés à la largeur des épaules, pointes légèrement ouvertes vers l’extérieur.",
+                "Regarde devant toi, poitrine ouverte, dos neutre (ni exagérément cambré, ni arrondi).",
+                "Inspire en envoyant les hanches vers l’arrière comme si tu voulais t’asseoir sur une chaise.",
+                "Descends jusqu’à ce que tes cuisses soient parallèles au sol, ou à ton amplitude confortable.",
+                "Genoux alignés avec les pointes de pieds, talons bien au sol.",
+                "Remonte en expirant, en poussant fortement dans le sol et en gardant le buste gainé."
+            ],
+            mistakes: [
+                "Genoux qui rentrent vers l’intérieur en descendant.",
+                "Dos qui s’arrondit en bas du mouvement.",
+                "Poids qui part sur l’avant du pied (talons qui décollent).",
+                "Descendre trop vite sans contrôle, ou rebondir en bas."
+            ],
+            variations: {
+                beginner: [
+                    "Utilise une chaise derrière toi : viens juste toucher l’assise avec les fessiers pour sécuriser la profondeur.",
+                    "Garde les bras tendus devant toi pour t’aider à rester droit."
+                ],
+                intermediate: [
+                    "Contrôle la descente sur 3 secondes pour travailler le contrôle (tempo lent).",
+                    "Ajoute une légère charge (sac à dos, haltère léger) si la technique est stable."
+                ],
+                advanced: [
+                    "Squat gobelet : tiens un poids devant la poitrine pour solliciter davantage le gainage.",
+                    "Ajoute une pause d’1 seconde en bas du mouvement avant de remonter."
+                ]
+            }
+        },
+        pushup: {
+            name: "Pompes",
+            context: "Haut du corps (pectoraux, triceps, épaules) et gainage. Très utile pour la force fonctionnelle et la prévention des déséquilibres.",
+            baseSteps: [
+                "Place tes mains un peu plus larges que les épaules, doigts orientés vers l’avant.",
+                "Aligne tête, épaules, hanches et chevilles : comme une planche.",
+                "Inspire en fléchissant les coudes, poitrine qui se dirige vers le sol.",
+                "Garde les coudes proches du corps (environ 45° par rapport au buste).",
+                "Descends jusqu’à ce que la poitrine soit proche du sol puis repousse le sol en expirant."
+            ],
+            mistakes: [
+                "Bassins qui s’affaissent (dos qui se creuse).",
+                "Coudes ouverts à 90° qui mettent trop de stress sur les épaules.",
+                "Regarder vers l’avant en cassant la nuque (tête en extension).",
+                "Remonter en “perdant” le gainage (dos qui se cambre)."
+            ],
+            variations: {
+                beginner: [
+                    "Commence sur les genoux ou contre un mur/table pour réduire la charge.",
+                    "Concentre-toi sur un alignement propre plutôt que sur le nombre de répétitions."
+                ],
+                intermediate: [
+                    "Pompes complètes au sol, avec descente contrôlée.",
+                    "Ajoute une légère élévation des pieds pour plus de difficulté si la posture reste stable."
+                ],
+                advanced: [
+                    "Pompes avec tempo (3 secondes de descente, 1 seconde de maintien en bas).",
+                    "Variantes plus explosives uniquement si la technique est parfaite (pompes claquées, par exemple)."
+                ]
+            }
+        },
+        plank: {
+            name: "Gainage planche",
+            context: "Travail statique du tronc (abdominaux profonds, lombaires) pour stabiliser la colonne sur tous les autres mouvements.",
+            baseSteps: [
+                "Place les coudes sous les épaules, avant-bras parallèles, mains à plat.",
+                "Tends les jambes derrière toi, pieds espacés de la largeur des hanches.",
+                "Aligne oreilles, épaules, hanches, genoux et chevilles.",
+                "Serre légèrement les fessiers et rentre le nombril pour stabiliser le bassin.",
+                "Respire calmement sans bloquer ta respiration."
+            ],
+            mistakes: [
+                "Bassins qui s’effondrent (dos hyper-cambré).",
+                "Fessiers trop hauts (posture en “pyramide”).",
+                "Tête qui pend (nuque cassée).",
+                "Vouloir tenir trop longtemps au détriment de la qualité."
+            ],
+            variations: {
+                beginner: [
+                    "Tiens plusieurs petites séries de 10–20 secondes avec une bonne posture.",
+                    "Tu peux poser les genoux si nécessaire, en gardant le tronc bien aligné."
+                ],
+                intermediate: [
+                    "Séries de 25–40 secondes de planche propre.",
+                    "Varie avec planche latérale courte pour travailler les obliques."
+                ],
+                advanced: [
+                    "Planche avec appui sur un pied ou un bras pour augmenter le contrôle.",
+                    "Planche dynamique : alternance épaules tapotées / planche, sans perdre l’alignement."
+                ]
+            }
+        },
+        sitting: {
+            name: "Posture assise prolongée",
+            context: "Posture clé pour les étudiants / développeurs. L’objectif est de limiter les tensions de dos, nuque et épaules.",
+            baseSteps: [
+                "Assieds-toi au fond de la chaise, bassin légèrement basculé vers l’avant.",
+                "Garde les pieds à plat au sol, genoux à environ 90°.",
+                "Redresse la colonne vers le haut, comme si quelqu’un tirait le sommet de ta tête.",
+                "Place l’écran à hauteur des yeux ou légèrement en dessous.",
+                "Garde les épaules détendues, coudes proches du corps, avant-bras soutenus."
+            ],
+            mistakes: [
+                "S’affaisser en arrière avec le bas du dos arrondi.",
+                "Ecran trop bas ou trop loin qui t’oblige à avancer la tête.",
+                "Rester immobile sans pause pendant plusieurs heures.",
+                "Croiser les jambes en permanence, ce qui peut créer des déséquilibres."
+            ],
+            variations: {
+                beginner: [
+                    "Installe un simple rappel : toutes les 30–45 minutes, change légèrement de position.",
+                    "Place un coussin ou une serviette dans le bas du dos pour te rappeler de redresser ton buste."
+                ],
+                intermediate: [
+                    "Alterner chaise classique et position assise active (ballon, coussin d’équilibre).",
+                    "Faire 2–3 mini pauses mobilité (nuque, hanches, chevilles) dans la journée."
+                ],
+                advanced: [
+                    "Alterner travail assis et debout avec un bureau réglable.",
+                    "Intégrer des micro-séances de mobilité / renfo (squats, pompes inclinées) dans ta journée."
+                ]
+            }
+        }
+    };
+
+    // ---- DATA OBJECTIF / VOLUME ----
+    function buildVolumeText(level, goal, movementId, frequency) {
+        let baseVolume = "";
+        if (movementId === "sitting") {
+            baseVolume = "L’idée n’est pas de “faire des séries”, mais de multiplier les petits ajustements dans la journée.";
+        } else {
+            if (level === "beginner") {
+                baseVolume = "Commence par 2 à 3 séries de 8 à 10 répétitions avec une marge d’effort confortable.";
+            } else if (level === "intermediate") {
+                baseVolume = "Vise 3 à 4 séries de 10 à 15 répétitions en gardant une technique propre jusqu’à la fin.";
+            } else {
+                baseVolume = "Tu peux monter à 4 séries ou plus, avec une difficulté qui reste contrôlable techniquement.";
+            }
+        }
+
+        let goalComplement = "";
+        if (goal === "sante") {
+            goalComplement = "Priorise la régularité plutôt que l’intensité : mieux vaut de petites doses fréquentes que de grosses séances isolées.";
+        } else if (goal === "performance") {
+            goalComplement = "Garde toujours 1 à 2 répétitions “en réserve” pour préserver la technique, même quand tu cherches à progresser.";
+        } else {
+            goalComplement = "Concentre-toi sur le contrôle et l’amplitude de mouvement, respirations calmes et sensation de fluidité.";
+        }
+
+        let freqText = "";
+        if (movementId !== "sitting") {
+            freqText = "Avec ta fréquence cible (" + frequency + " séances par semaine), intègre ce mouvement dans l’échauffement ou en début de séance.";
+        } else {
+            freqText = "Essaie d’ajouter 1 à 2 micro-pauses toutes les 45–60 minutes, en cohérence avec ton rythme de travail.";
+        }
+
+        return baseVolume + " " + goalComplement + " " + freqText;
+    }
+
+    function buildGoalTip(goal, movementId) {
+        const base =
+            "Adapte toujours la séance à ton énergie du jour et consulte un professionnel de santé si tu as une douleur persistante.";
+        if (movementId === "sitting") {
+            if (goal === "performance") {
+                return "Plus ta posture de travail est neutre, plus tu récupères facilement de tes séances : considère cette posture comme un “exercice invisible” qui protège tes performances. " + base;
+            }
+            if (goal === "mobilite") {
+                return "Utilise la posture assise comme point de départ pour repérer les zones raides (hanches, thorax) et cale quelques mouvements de mobilité simples dans la journée. " + base;
+            }
+            return "Pense à ta chaise comme à un équipement de sport : elle doit t’aider à rester actif, pas te figer. Rappelle-toi de te lever régulièrement. " + base;
+        }
+
+        if (goal === "performance") {
+            return "Traite ce mouvement comme un fondationnel : meilleure est ta technique, plus tu pourras charger ou accélérer sans te blesser. Filmer 1 ou 2 répétitions peut t’aider à ajuster. " + base;
+        }
+        if (goal === "mobilite") {
+            return "Reste dans une amplitude contrôlée, respire profondément et cherche la sensation d’espace dans les articulations plutôt que la brûlure musculaire. " + base;
+        }
+        return "Pense “confortable mais actif” : aucune douleur articulaire tolérée, seulement un effort musculaire modéré. Si quelque chose te semble étrange, réduis l’amplitude et simplifie la variante. " + base;
+    }
+
+    // ---- DATA EQUIPEMENT ----
+    const equipmentByMovement = {
+        squat: [
+            {
+                name: "Tapis de sol training",
+                tag: "Confort & sécurité",
+                description: "Amorti pour les exercices au poids du corps, idéal pour les échauffements et étirements.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Bande élastique de résistance",
+                tag: "Alignement genoux",
+                description: "À placer au-dessus des genoux pour apprendre à les garder dans l’axe pendant le squat.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Chaussures de training stables",
+                tag: "Stabilité",
+                description: "Semelle plate et stable pour de meilleurs appuis sur les mouvements de jambes.",
+                link: "https://www.decathlon.fr"
+            }
+        ],
+        pushup: [
+            {
+                name: "Tapis de fitness antidérapant",
+                tag: "Confort poignets",
+                description: "Limite le glissement des mains et protège les poignets lors des appuis au sol.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Poignées de pompe",
+                tag: "Angle articulations",
+                description: "Permet de garder les poignets plus neutres et d’augmenter l’amplitude de mouvement.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Bande élastique légère",
+                tag: "Assistance",
+                description: "Peut être utilisée pour t’aider à remonter sur les variantes plus difficiles.",
+                link: "https://www.decathlon.fr"
+            }
+        ],
+        plank: [
+            {
+                name: "Tapis épais",
+                tag: "Confort coudes",
+                description: "Plus confortable pour tenir les gainages prolongés sans gêne aux appuis.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Swiss ball",
+                tag: "Progression",
+                description: "Permet de proposer des variantes de gainage plus dynamiques et ludiques.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Rouleau de massage",
+                tag: "Récupération",
+                description: "Facilite la décontraction des muscles sollicités après les séances.",
+                link: "https://www.decathlon.fr"
+            }
+        ],
+        sitting: [
+            {
+                name: "Coussin d’assise ergonomique",
+                tag: "Confort lombaire",
+                description: "Aide à garder une légère courbure naturelle du bas du dos en position assise.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Coussin d’équilibre",
+                tag: "Assise active",
+                description: "Ajoute de la micro-instabilité pour garder le tronc légèrement actif en travaillant.",
+                link: "https://www.decathlon.fr"
+            },
+            {
+                name: "Rouleau ou petit ballon de mobilité",
+                tag: "Micro-pauses",
+                description: "Parfait pour des exercices rapides de mobilité pieds, mollets ou dos au bureau.",
+                link: "https://www.decathlon.fr"
+            }
+        ]
+    };
+
+    // ---- DOM ----
+    const profileForm = document.getElementById("profile-form");
+    const profileSummary = document.getElementById("profile-summary");
+    const profileTextEl = document.getElementById("profile-text");
+
+    const movementSection = document.getElementById("movement-section");
+    const equipmentSection = document.getElementById("equipment-section");
+    const movementSelect = document.getElementById("movement-select");
+
+    const movementTitle = document.getElementById("movement-title");
+    const movementContext = document.getElementById("movement-context");
+    const movementSteps = document.getElementById("movement-steps");
+    const movementMistakes = document.getElementById("movement-mistakes");
+    const movementVolume = document.getElementById("movement-volume");
+    const movementGoalTip = document.getElementById("movement-goal-tip");
+    const movementCaption = document.getElementById("movement-caption");
+    const visualStatus = document.getElementById("visual-status");
+    const equipmentGrid = document.getElementById("equipment-grid");
+
+    const stepPill1 = document.getElementById("step-pill-1");
+    const stepPill2 = document.getElementById("step-pill-2");
+    const stepPill3 = document.getElementById("step-pill-3");
+
+    function setStepState(step) {
+        const pills = [stepPill1, stepPill2, stepPill3];
+        pills.forEach((pill, index) => {
+            pill.classList.remove("step-pill--active", "step-pill--done");
+            if (index + 1 === step) {
+                pill.classList.add("step-pill--active");
+            } else if (index + 1 < step) {
+                pill.classList.add("step-pill--done");
+            }
+        });
+    }
+
+    // ---- RENDER ----
+    function renderProfileSummary() {
+        if (!currentProfile) return;
+
+        const levelLabel = LEVEL_LABELS[currentProfile.level] || currentProfile.level;
+        const goalLabel = GOAL_LABELS[currentProfile.goal] || currentProfile.goal;
+
+        const sportText = currentProfile.sport === "autre"
+            ? "un sport encore à préciser"
+            : "plutôt orienté " + currentProfile.sport.replace("_", " ");
+
+        const constraintsText = currentProfile.constraints === "aucune"
+            ? "pas de contrainte particulière déclarée"
+            : "une vigilance particulière sur " + currentProfile.constraints;
+
+        profileTextEl.textContent =
+            "Tu te situes comme " + levelLabel + ", avec un objectif principal de " + goalLabel +
+            ", pour " + sportText + ". Tu vises " + currentProfile.frequency +
+            " séances par semaine, avec " + constraintsText +
+            ". Les consignes ci-contre sont donc calibrées pour ce contexte (mais ne remplacent pas un avis médical).";
+
+        profileSummary.classList.remove("is-hidden");
+    }
+
+    function renderMovementAdvice() {
+        if (!currentProfile) {
+            movementTitle.textContent = "Commence par générer ton profil à gauche 👈";
+            movementContext.textContent =
+                "Le profil nous permet d’ajuster l’intensité, le volume et les variantes pour limiter le risque de blessure.";
+            movementSteps.innerHTML = "";
+            movementMistakes.innerHTML = "";
+            movementVolume.textContent = "";
+            movementGoalTip.textContent = "";
+            return;
+        }
+
+        const movementId = movementSelect.value || "squat";
+        const movement = movementsData[movementId];
+        if (!movement) return;
+
+        movementTitle.textContent = "Conseils personnalisés – " + movement.name;
+        movementContext.textContent = movement.context;
+
+        // Steps
+        movementSteps.innerHTML = "";
+        movement.baseSteps.forEach(step => {
+            const li = document.createElement("li");
+            li.textContent = step;
+            movementSteps.appendChild(li);
+        });
+
+        // Mistakes
+        movementMistakes.innerHTML = "";
+        movement.mistakes.forEach(m => {
+            const li = document.createElement("li");
+            li.textContent = m;
+            movementMistakes.appendChild(li);
+        });
+
+        // Volume
+        movementVolume.textContent = buildVolumeText(
+            currentProfile.level,
+            currentProfile.goal,
+            movementId,
+            currentProfile.frequency
+        );
+
+        // Goal tip
+        movementGoalTip.innerHTML = buildGoalTip(currentProfile.goal, movementId);
+
+        // Variation en fonction du niveau (inclus dans la partie astuces)
+        const levelVar = movement.variations[currentProfile.level] || [];
+        if (levelVar.length) {
+            const variationList = document.createElement("ul");
+            variationList.style.marginTop = "4px";
+            variationList.style.paddingLeft = "18px";
+            variationList.style.fontSize = "12px";
+            variationList.style.color = "#9ca3af";
+
+            levelVar.forEach(v => {
+                const li = document.createElement("li");
+                li.textContent = v;
+                variationList.appendChild(li);
+            });
+
+            movementGoalTip.appendChild(document.createElement("br"));
+            movementGoalTip.appendChild(variationList);
+        }
+
+        // Visuels : active le bon schéma
+        document.querySelectorAll(".movement-visual").forEach(fig => {
+            if (fig.getAttribute("data-move") === movementId) {
+                fig.classList.add("movement-visual--active");
+            } else {
+                fig.classList.remove("movement-visual--active");
+            }
+        });
+
+        // Légende visuels
+        if (movementId === "squat") {
+            visualStatus.textContent = "Vue latérale – alignement dos / genoux";
+            movementCaption.textContent =
+                "Le schéma côté gauche montre la posture de départ, celui de droite la position basse avec genoux dans l’axe.";
+        } else if (movementId === "pushup") {
+            visualStatus.textContent = "Gainage et angle des coudes";
+            movementCaption.textContent =
+                "On visualise une planche solide : le tronc reste aligné, les coudes ne s’ouvrent pas exagérément.";
+        } else if (movementId === "plank") {
+            visualStatus.textContent = "Alignement épaules–hanches–chevilles";
+            movementCaption.textContent =
+                "L’idée : sentir une droite des épaules aux chevilles, sans effondrement du bassin ni pyramide.";
+        } else {
+            visualStatus.textContent = "Posture dynamique assise";
+            movementCaption.textContent =
+                "Une posture plus neutre devant l’écran + des pauses régulières limitent les tensions accumulées.";
+        }
+
+        // Equipement (niveau 4)
+        renderEquipment(movementId);
+
+        movementSection.classList.remove("is-disabled");
+        equipmentSection.classList.remove("is-disabled");
+        setStepState(2);
+    }
+
+    function renderEquipment(movementId) {
+        const items = equipmentByMovement[movementId] || [];
+        equipmentGrid.innerHTML = "";
+
+        items.forEach(item => {
+            const card = document.createElement("article");
+            card.className = "equipment-item";
+
+            const tag = document.createElement("div");
+            tag.className = "equipment-tag";
+            tag.textContent = item.tag;
+
+            const title = document.createElement("h3");
+            title.textContent = item.name;
+
+            const desc = document.createElement("p");
+            desc.textContent = item.description;
+
+            const link = document.createElement("a");
+            link.className = "equipment-link";
+            link.href = item.link;
+            link.target = "_blank";
+            link.rel = "noopener";
+            link.textContent = "Voir sur decathlon.fr";
+
+            card.appendChild(tag);
+            card.appendChild(title);
+            card.appendChild(desc);
+            card.appendChild(link);
+
+            equipmentGrid.appendChild(card);
+        });
+
+        setStepState(3);
+    }
+
+    // ---- EVENTS ----
+    profileForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(profileForm);
+
+        const level = formData.get("level");
+        const sport = formData.get("sport");
+        const goal = formData.get("goal");
+        const frequency = formData.get("frequency");
+        const constraints = formData.get("constraints") || "aucune";
+
+        if (!level || !sport || !goal || !frequency) {
+            return;
+        }
+
+        currentProfile = { level, sport, goal, frequency, constraints };
+
+        renderProfileSummary();
+        renderMovementAdvice();
+
+        movementSection.classList.remove("is-disabled");
+        equipmentSection.classList.remove("is-disabled");
+        setStepState(2);
+    });
+
+    movementSelect.addEventListener("change", function () {
+        renderMovementAdvice();
+    });
+
+    // Initial state
+    setStepState(1);
+    
+    window.addEventListener('load', function () {
+        const splash = document.getElementById('splash');
+        if (!splash) return;
+
+        // Temps d'affichage du splash (1,8s)
+        setTimeout(function () {
+            splash.classList.add('splash--hidden');
+        }, 1800);
+
+        splash.addEventListener('transitionend', function () {
+            splash.style.display = 'none';
+        });
+    });
+</script>
+
+<script>
+// =========================
+//   JEU SNAKE SIMPLE
+// =========================
+(function () {
+    const openBtn = document.getElementById('snake-open-btn');
+    const overlay = document.getElementById('snake-overlay');
+    const closeBtn = document.getElementById('snake-close-btn');
+    const canvas = document.getElementById('snake-canvas');
+    const scoreSpan = document.getElementById('snake-score');
+
+    if (!openBtn || !overlay || !closeBtn || !canvas || !scoreSpan) return;
+
+    const ctx = canvas.getContext('2d');
+    const gridSize = 20;
+    const tileSize = canvas.width / gridSize;
+
+    let snake, dir, nextDir, food, score, loopId, isDead;
+
+    function resetGame() {
+        snake = [
+            { x: 10, y: 10 },
+            { x: 9, y: 10 },
+            { x: 8, y: 10 }
+        ];
+        dir = { x: 1, y: 0 };
+        nextDir = { x: 1, y: 0 };
+        score = 0;
+        isDead = false;
+        placeFood();
+        updateScore();
+        if (loopId) clearInterval(loopId);
+        loopId = setInterval(tick, 120);
+        draw();
+    }
+
+    function placeFood() {
+        let x, y, collision;
+        do {
+            x = Math.floor(Math.random() * gridSize);
+            y = Math.floor(Math.random() * gridSize);
+            collision = snake.some(s => s.x === x && s.y === y);
+        } while (collision);
+        food = { x, y };
+    }
+
+    function updateScore() {
+        scoreSpan.textContent = score;
+    }
+
+    function tick() {
+        if (isDead) return;
+
+        dir = nextDir;
+        const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+        // Collision mur
+        if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize) {
+            gameOver();
+            return;
+        }
+
+        // Collision corps
+        if (snake.some(s => s.x === head.x && s.y === head.y)) {
+            gameOver();
+            return;
+        }
+
+        snake.unshift(head);
+
+        // Mange la pomme
+        if (head.x === food.x && head.y === food.y) {
+            score += 10;
+            updateScore();
+            placeFood();
+        } else {
+            snake.pop();
+        }
+
+        draw();
+    }
+
+    function gameOver() {
+        isDead = true;
+        clearInterval(loopId);
+        loopId = null;
+    }
+
+    function draw() {
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Petite grille
+        ctx.strokeStyle = 'rgba(30, 64, 175, 0.35)';
+        ctx.lineWidth = 1;
+        for (let i = 0; i < gridSize; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * tileSize + 0.5, 0);
+            ctx.lineTo(i * tileSize + 0.5, canvas.height);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(0, i * tileSize + 0.5);
+            ctx.lineTo(canvas.width, i * tileSize + 0.5);
+            ctx.stroke();
+        }
+
+        // Pomme
+        ctx.fillStyle = '#f97316';
+        ctx.beginPath();
+        ctx.arc(
+            food.x * tileSize + tileSize / 2,
+            food.y * tileSize + tileSize / 2,
+            tileSize * 0.35,
+            0,
+            Math.PI * 2
+        );
+        ctx.fill();
+
+        // Serpent
+        snake.forEach((seg, index) => {
+            const x = seg.x * tileSize;
+            const y = seg.y * tileSize;
+            ctx.fillStyle = index === 0 ? '#22c55e' : '#16a34a';
+            ctx.fillRect(x + 1, y + 1, tileSize - 2, tileSize - 2);
+        });
+    }
+
+    function openOverlay() {
+        overlay.classList.add('open');
+        resetGame(); // démarre le jeu à l'ouverture
+    }
+
+    function closeOverlay() {
+        overlay.classList.remove('open');
+        if (loopId) clearInterval(loopId);
+        loopId = null;
+    }
+
+    openBtn.addEventListener('click', openOverlay);
+    closeBtn.addEventListener('click', closeOverlay);
+
+    // Contrôles clavier uniquement quand le jeu est ouvert
+    document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('open')) return;
+
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeOverlay();
+            return;
+        }
+
+        if (e.key === 'ArrowUp' && dir.y !== 1) {
+            nextDir = { x: 0, y: -1 };
+            e.preventDefault();
+        } else if (e.key === 'ArrowDown' && dir.y !== -1) {
+            nextDir = { x: 0, y: 1 };
+            e.preventDefault();
+        } else if (e.key === 'ArrowLeft' && dir.x !== 1) {
+            nextDir = { x: -1, y: 0 };
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight' && dir.x !== -1) {
+            nextDir = { x: 1, y: 0 };
+            e.preventDefault();
+        } else if (e.key === 'r' || e.key === 'R') {
+            resetGame();
+        }
+    });
+})();
+</script>
+
+</body>
+</html>

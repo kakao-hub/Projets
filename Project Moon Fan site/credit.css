@@ -1,0 +1,99 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border: 1px solid greenyellow;
+}
+
+
+header {
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-size: 50px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/Project_Moon_logo.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 40px;
+  width: 700px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.bloc ul{
+    list-style-type: none;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  border-bottom: 1px solid greenyellow;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+nav a {
+  font-family: 'Cinzel', serif;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  font-size: 20pt;
+  margin: 0 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: white;
+  background-color: gold;
+}
+
+p {
+  padding: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+
+.disclaimer {
+  font-style: italic;
+  color: gray;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
+
+  header {
+    grid-column: 1; 
+    font-size: 24px; 
+    padding: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+}

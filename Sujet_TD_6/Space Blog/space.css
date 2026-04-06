@@ -1,0 +1,89 @@
+body {
+  background-color: gray;
+}
+
+main {
+  width  : 1000px;
+  margin : 0px auto;
+  border:solid 1px black;
+  background-color: white;
+  display : grid; 
+  grid-template-columns : 300px 700px; 
+
+}
+
+header {
+  border: solid 1px black;
+  text-align: center;
+  background-image: url(entete.jpg);
+  color: white;
+  padding:20px;
+  font-weight: bold;
+  font-family: Arial,sans-serif;
+  grid-column : span 2;
+  font-size: 30px;
+  background-size : 100% 100%;
+}
+
+
+
+nav a {
+  border:solid 5px gray;
+  color:dodgerblue;
+  text-align: center;
+  background-color: black;
+  display: block;
+  width: 200px;
+  text-decoration: none;
+  padding:10px;
+  margin: 10px;
+
+}
+
+section{
+  padding:20px;
+}
+
+article {
+  margin:10px;
+  border:solid 1px deepskyblue;
+  padding:10px;
+}
+
+h1{
+  border:solid 1px deepskyblue;
+  text-align: center;
+  background-color: deepskyblue;
+  color: white;
+  font-family: Arial,sans-serif;
+  font-size: 20px;
+  
+
+
+}
+
+.date{
+  border:solid 1px black;
+  background-color: black;
+  color: white;  
+  clear:both;
+}
+
+
+IMG{
+  float:left;
+  border-radius: 100px;
+  border:solid 2px deepskyblue;
+  margin: 10px;
+
+}
+
+@media (max-width:1000px) { 
+  main { 
+  width: 100%; 
+  grid-template-columns: auto; 
+  } 
+  header { 
+  grid-column: 1; 
+  } 
+} 

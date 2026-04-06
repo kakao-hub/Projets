@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NIRD Village – Village Numérique Résistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="b.css">
+    
+</head>
+<body>
+
+<!-- SPLASH KLUB -->
+<div id="splash" class="splash">
+    <!-- Logo K seul -->
+    <img src="logo K.png" alt="K" class="logo-k">
+    <!-- Logo KLUB complet -->
+    <img src="logo texte.png" alt="KLUB" class="logo-klub">
+</div>
+
+<div class="app">
+    <div class="app-inner">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <div class="logo-text">
+                    <span>NIRD VILLAGE</span>
+                    <span>Expérimente la résistance numérique d’un établissement</span>
+                </div>
+            </div>
+            <div class="header-tagline">
+                <div><strong>Nuit de l’Info 2025</strong></div>
+                <div>Numérique <strong>Inclusif, Responsable, Durable</strong></div>
+            </div>
+        </header>
+
+        <div class="screens">
+            <!-- HOME SCREEN -->
+            <section id="home-screen" class="screen active">
+                <div class="hero">
+                    <div class="hero-eyebrow">
+                        <span class="badge">●</span>
+                        <span>Scénarios interactifs pour décider à la place de l’établissement</span>
+                    </div>
+                    <h1>
+                        Transforme ton établissement en
+                        <span class="highlight">village numérique résistant</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Explore les lieux clés (salle info, vie scolaire, administration…), prends des décisions
+                        concrètes
+                        et observe l’impact sur la <strong>dépendance aux Big Tech</strong>, la
+                        <strong>durabilité</strong> et l’<strong>inclusion</strong>.
+                    </p>
+                    <div class="hero-actions">
+                        <button id="start-btn" class="btn btn-primary">
+                            Lancer le village
+                        </button>
+                        <button id="see-info-btn" class="btn btn-ghost">
+                            Voir les principes NIRD
+                        </button>
+                    </div>
+                    <p class="hero-note">
+                        Pensé pour une démo rapide : <span class="pill"><strong class="badge-ok">✔</strong> Front
+                        only</span>,
+                        <code>HTML + CSS + JS</code>, aucun backend obligatoire.
+                    </p>
+                </div>
+                <aside class="hero-aside">
+                    <h2>Objectif pédagogique</h2>
+                    <p>
+                        Montrer que la démarche NIRD se construit <strong>progressivement</strong> à travers des
+                        décisions
+                        réalistes : réemploi, logiciels libres, sobriété, inclusion…
+                    </p>
+                    <div class="aside-tags">
+                        <span class="tag tag-soft">Réduire la dépendance aux Big Tech</span>
+                        <span class="tag">Allonger la durée de vie du parc</span>
+                        <span class="tag">Impliquer élèves & équipes</span>
+                        <span class="tag">Décisions scénarisées</span>
+                    </div>
+                    <div class="aside-footnote">
+                        Ce prototype peut être relié ensuite aux ressources officielles NIRD ou à une
+                        <strong>forge de communs</strong>.
+                    </div>
+                </aside>
+            </section>
+
+            <!-- VILLAGE SCREEN -->
+            <section id="village-screen" class="screen">
+                <div class="village-header">
+                    <div class="village-header-main">
+                        <h2>Le village numérique de ton établissement</h2>
+                        <p>Choisis un lieu, prends une décision et regarde comment ton village avance vers la
+                            démarche NIRD.</p>
+                    </div>
+                    <button id="back-home-btn" class="btn btn-ghost btn-small">
+                        Retour
+                    </button>
+                </div>
+
+                <div class="village-layout">
+                    <section class="village-map">
+                        <div class="village-map-header">
+                            <h3>Carte du village</h3>
+                            <span>Chaque lieu → un scénario NIRD</span>
+                        </div>
+                        <div class="cards-grid">
+                            <button class="card" data-scenario="salle-info">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Salle informatique</div>
+                                <div class="card-sub">Ordinateurs vieillissants, licences, OS…</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Obsolescence</span>
+                                    <span class="card-pill">Linux / réemploi</span>
+                                </div>
+                            </button>
+
+                            <button class="card" data-scenario="administration">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Administration</div>
+                                <div class="card-sub">Messagerie, bureautique, stockage de données.</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Cloud & contrats</span>
+                                    <span class="card-pill">Données sensibles</span>
+                                </div>
+                            </button>
+
+                            <button class="card" data-scenario="vie-scolaire">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Vie scolaire & élèves</div>
+                                <div class="card-sub">ENT, ressources, inclusion numérique.</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Accessibilité</span>
+                                    <span class="card-pill">Inclusion</span>
+                                </div>
+                            </button>
+
+                            <button class="card" data-scenario="serveur-reseau">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Serveur & réseau</div>
+                                <div class="card-sub">Hébergement, réseau interne, contrôle.</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Autonomie</span>
+                                    <span class="card-pill">Auto-hébergement</span>
+                                </div>
+                            </button>
+
+                            <button class="card" data-scenario="pedagogie">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Pédagogie & ressources</div>
+                                <div class="card-sub">Manuels, plateformes, communs numériques.</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Logiciels libres</span>
+                                    <span class="card-pill">Communs éducatifs</span>
+                                </div>
+                            </button>
+
+                            <button class="card" data-scenario="partenaires">
+                                <div class="visited-dot"></div>
+                                <div class="card-title">Partenaires & collectivités</div>
+                                <div class="card-sub">Financement, soutien, cohérence territoriale.</div>
+                                <div class="card-meta">
+                                    <span class="card-pill card-pill-soft">Stratégie</span>
+                                    <span class="card-pill">Co-construction</span>
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+
+                    <aside class="side-panel">
+                        <section class="panel stats">
+                            <h3>État actuel du village</h3>
+                            <div class="stats-grid">
+                                <div class="stat">
+                                    <div class="stat-header">
+                                        <span>Dépendance aux Big Tech</span>
+                                        <span data-stat-value="dependence">70%</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-bar-fill bad" data-stat-fill="dependence"></div>
+                                    </div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-header">
+                                        <span>Durabilité / réemploi</span>
+                                        <span data-stat-value="durability">40%</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-bar-fill" data-stat-fill="durability"></div>
+                                    </div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-header">
+                                        <span>Inclusion & accessibilité</span>
+                                        <span data-stat-value="inclusion">40%</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-bar-fill" data-stat-fill="inclusion"></div>
+                                    </div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-header">
+                                        <span>Coût perçu pour l’établissement</span>
+                                        <span data-stat-value="cost">50%</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-bar-fill bad" data-stat-fill="cost"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="panel info" id="nird-info-panel">
+                            <h3>NIRD, c’est quoi ?</h3>
+                            <p>
+                                Une démarche pour construire un numérique <strong>Inclusif, Responsable et Durable</strong>
+                                dans les établissements éducatifs.
+                            </p>
+                            <ul>
+                                <li>Limiter la dépendance aux grandes plateformes privées.</li>
+                                <li>Allonger la durée de vie des équipements, via le réemploi.</li>
+                                <li>Favoriser les logiciels libres & les communs numériques.</li>
+                                <li>Penser accessibilité et inclusion de tous les publics.</li>
+                            </ul>
+                            <div class="info-footer">
+                                Objectif : rendre les choix <strong>compréhensibles</strong> et montrer qu’un
+                                établissement peut avancer <strong>par étapes</strong>.
+                            </div>
+                        </section>
+
+                        <section class="panel summary-preview">
+                            <h3>Bilan NIRD du village</h3>
+                            <div class="summary-label">
+                                <span class="summary-badge" id="summary-badge">En construction</span>
+                                <span id="summary-label-text">Explore quelques lieux pour voir ton niveau.</span>
+                            </div>
+                            <p id="summary-preview-text">
+                                Lorsque tu auras pris plusieurs décisions, tu pourras afficher un bilan synthétique :
+                                dépendance, durabilité, inclusion et perception du coût.
+                            </p>
+                            <button id="see-summary-btn" class="btn btn-primary btn-full" style="margin-top: 7px;">
+                                Voir le bilan actuel
+                            </button>
+                        </section>
+                    </aside>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- SCENARIO MODAL -->
+<div id="scenario-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="scenario-title">Titre du scénario</h3>
+            <span id="scenario-location">Lieu</span>
+        </div>
+        <div class="modal-body">
+            <p id="scenario-description">Description du contexte…</p>
+            <div class="choices" id="scenario-choices"></div>
+            <p class="scenario-feedback" id="scenario-feedback"></p>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-left">
+                Astuce : lis bien les <strong>effets</strong> de chaque choix avant de cliquer.
+            </div>
+            <button id="close-scenario-btn" class="btn btn-outline btn-small">
+                Fermer
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SUMMARY MODAL -->
+<div id="summary-modal" class="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="summary-title">Bilan du village</h3>
+            <span id="summary-subtitle">Synthèse NIRD</span>
+        </div>
+        <div class="modal-body">
+            <p id="summary-text">
+                Ton bilan apparaîtra ici.
+            </p>
+            <ul class="summary-list" id="summary-list"></ul>
+            <div class="summary-score" id="summary-score"></div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-left">
+                Idée d’extension : générer un <strong>plan d’actions</strong> détaillé à partir de ce bilan.
+            </div>
+            <button id="close-summary-btn" class="btn btn-outline btn-small">
+                Fermer
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- ÉTAT GLOBAL ---
+    const state = {
+        dependence: 70,    // plus c’est haut, plus on dépend des Big Tech
+        durability: 40,    // capacité à réemployer / durer
+        inclusion: 40,     // accessibilité, prise en compte de tous
+        cost: 50,          // coût perçu / complexité ressentie
+        visited: new Set()
+    };
+
+    // --- SCÉNARIOS ---
+    const scenarios = [
+        {
+            id: 'salle-info',
+            title: 'Salle informatique : OS et obsolescence',
+            location: 'Salle informatique',
+            description:
+                "Les ordinateurs du lycée sont encore sous Windows 10, avec des performances qui commencent à fatiguer. " +
+                "Le support officiel touche à sa fin, mais les machines fonctionnent toujours correctement.",
+            choices: [
+                {
+                    labelMain: "Basculer progressivement une partie du parc sur une distribution GNU/Linux.",
+                    labelSub: "Commencer par quelques salles, impliquer des élèves et des profs motivés.",
+                    effects: {dependence: -20, durability: +25, inclusion: +5, cost: -10},
+                    feedback:
+                        "Tu mets un pied concret dans le libre et tu prolonges fortement la durée de vie du parc. " +
+                        "La marche d’adoption est un peu plus haute au début, mais le coût global baisse."
+                },
+                {
+                    labelMain: "Racheter des PC neufs avec Windows 11 pour tout l’établissement.",
+                    labelSub: "Tu repars sur du matériel à jour, mais très dépendant d’un éditeur unique.",
+                    effects: {dependence: +15, durability: -10, inclusion: +5, cost: +20},
+                    feedback:
+                        "Le confort immédiat est là, mais la dépendance à un seul fournisseur augmente et ton budget explose. " +
+                        "La démarche NIRD reste fragile."
+                },
+                {
+                    labelMain: "Tester Linux sur un petit groupe de postes en parallèle d’un renouvellement limité.",
+                    labelSub: "Approche hybride, avec analyse des retours avant d’élargir.",
+                    effects: {dependence: -10, durability: +15, inclusion: +5, cost: -5},
+                    feedback:
+                        "Tu assumes une démarche expérimentale, rassurante pour la direction. " +
+                        "C’est une bonne transition vers plus d’autonomie, sans bascule brutale."
+                }
+            ]
+        },
+        {
+            id: 'administration',
+            title: 'Administration : messagerie et bureautique',
+            location: 'Bureaux administratifs',
+            description:
+                "L’administration utilise une suite bureautique propriétaire liée à une grande plateforme cloud. " +
+                "Les contrats arrivent à renouvellement, avec une augmentation annoncée.",
+            choices: [
+                {
+                    labelMain: "Conserver l’existant et accepter la hausse de coût.",
+                    labelSub: "Pas de changement d’outil, mais plus de dépendance.",
+                    effects: {dependence: +10, durability: 0, inclusion: 0, cost: +15},
+                    feedback:
+                        "C’est confortable à court terme, mais tu renforces le verrouillage à une seule plateforme " +
+                        "et la facture continue de grimper."
+                },
+                {
+                    labelMain: "Mettre en place une suite bureautique libre auto-hébergée.",
+                    labelSub: "Migration progressive des services sensibles, accompagnée par de la formation.",
+                    effects: {dependence: -20, durability: +10, inclusion: +5, cost: -10},
+                    feedback:
+                        "Tu reprends la main sur les données administratives. " +
+                        "Cela demande un accompagnement, mais c’est un levier fort pour la souveraineté et la maîtrise des coûts."
+                },
+                {
+                    labelMain: "Conserver la messagerie actuelle mais migrer la bureautique vers une suite libre.",
+                    labelSub: "Stratégie de compromis pour limiter la résistance au changement.",
+                    effects: {dependence: -10, durability: +5, inclusion: +5, cost: -5},
+                    feedback:
+                        "Tu réduis la dépendance sans tout casser d’un coup. " +
+                        "C’est une marche réaliste vers un NIRD plus avancé."
+                }
+            ]
+        },
+        {
+            id: 'vie-scolaire',
+            title: 'Vie scolaire : ENT et inclusion',
+            location: 'Vie scolaire & élèves',
+            description:
+                "Les élèves accèdent à plusieurs services via l’ENT, mais certains outils ne sont pas adaptés " +
+                "aux élèves en situation de handicap ou disposant d’un équipement personnel limité.",
+            choices: [
+                {
+                    labelMain: "Ajouter des outils libres accessibles (lecteurs, polices adaptées, etc.).",
+                    labelSub: "Tester avec des groupes d’élèves et les équipes médico-sociales.",
+                    effects: {dependence: -5, durability: +5, inclusion: +20, cost: +5},
+                    feedback:
+                        "Tu renforces clairement l’inclusion, même si cela demande un peu de temps d’appropriation. " +
+                        "Les bénéfices pédagogiques sont forts."
+                },
+                {
+                    labelMain: "Ignorer ces besoins spécifiques, par manque de temps ou de moyens.",
+                    labelSub: "Les parcours restent les mêmes pour tout le monde.",
+                    effects: {dependence: 0, durability: 0, inclusion: -20, cost: -5},
+                    feedback:
+                        "Le coût direct semble faible, mais tu crées de la fracture numérique et de la frustration. " +
+                        "C’est contraire à l’esprit NIRD."
+                },
+                {
+                    labelMain: "Impliquer un groupe d’élèves ambassadeurs numériques.",
+                    labelSub: "Co-construction d’usages, tests et tutoriels entre pairs.",
+                    effects: {dependence: -5, durability: +10, inclusion: +15, cost: -5},
+                    feedback:
+                        "Tu relies inclusion, pédagogie et montée en compétence. " +
+                        "Les élèves deviennent moteurs de la démarche NIRD."
+                }
+            ]
+        },
+        {
+            id: 'serveur-reseau',
+            title: 'Serveur & réseau : hébergement des services',
+            location: 'Local technique / serveur',
+            description:
+                "Certains services sont hébergés dans un cloud propriétaire unique, d’autres pourraient " +
+                "être mutualisés avec la collectivité ou hébergés en interne.",
+            choices: [
+                {
+                    labelMain: "Tout externaliser vers un unique fournisseur cloud.",
+                    labelSub: "Gestion simplifiée, mais dépendance maximale.",
+                    effects: {dependence: +20, durability: -5, inclusion: 0, cost: +10},
+                    feedback:
+                        "Tu simplifies la gestion, mais ton établissement devient totalement dépendant d’un acteur privé. " +
+                        "La marge de manœuvre est très faible en cas de changement de politique ou de prix."
+                },
+                {
+                    labelMain: "Mutualiser certains services avec la collectivité (hébergement public).",
+                    labelSub: "Conventions avec la ville, le département ou la région.",
+                    effects: {dependence: -15, durability: +5, inclusion: +5, cost: -5},
+                    feedback:
+                        "Tu renforces les communs publics et la cohérence territoriale. " +
+                        "Le chemin demande de la coordination, mais l’impact sur la résilience est fort."
+                },
+                {
+                    labelMain: "Auto-héberger un petit nombre de services libres stratégiques.",
+                    labelSub: "Commencer par de petits services (pads, partage de fichiers).",
+                    effects: {dependence: -10, durability: +5, inclusion: 0, cost: -5},
+                    feedback:
+                        "Tu développes des compétences internes et une culture de l’autonomie. " +
+                        "C’est un bon compromis pour amorcer une démarche NIRD avancée."
+                }
+            ]
+        },
+        {
+            id: 'pedagogie',
+            title: 'Pédagogie : ressources et communs numériques',
+            location: 'Équipe pédagogique',
+            description:
+                "Les enseignants utilisent beaucoup de ressources fermées (manuels, plateformes privatives). " +
+                "Certains aimeraient contribuer à des ressources libres ou des communs éducatifs.",
+            choices: [
+                {
+                    labelMain: "Encourager la création / adaptation de ressources libres.",
+                    labelSub: "Temps dédié, valorisation dans les projets de l’établissement.",
+                    effects: {dependence: -15, durability: +10, inclusion: +10, cost: +5},
+                    feedback:
+                        "Tu renforces la capacité de l’établissement à produire et adapter ses propres contenus. " +
+                        "C’est un investissement en temps, mais très aligné avec les communs éducatifs."
+                },
+                {
+                    labelMain: "Continuer à utiliser principalement des ressources fermées.",
+                    labelSub: "Pas de changement majeur dans les pratiques pédagogiques.",
+                    effects: {dependence: +10, durability: -5, inclusion: -5, cost: -5},
+                    feedback:
+                        "Le confort immédiat est là, mais tu restes dépendant des stratégies commerciales des éditeurs. " +
+                        "La diffusion et l’adaptation sont limitées."
+                },
+                {
+                    labelMain: "Mettre en place un petit groupe de travail sur les communs numériques.",
+                    labelSub: "Professeurs, élèves, partenaires externes.",
+                    effects: {dependence: -10, durability: +10, inclusion: +10, cost: 0},
+                    feedback:
+                        "Tu crées une dynamique collective, sans imposer tout de suite un changement massif. " +
+                        "C’est une bonne porte d’entrée vers les communs."
+                }
+            ]
+        },
+        {
+            id: 'partenaires',
+            title: 'Partenaires & collectivités : financement et cohérence',
+            location: 'Direction & partenaires',
+            description:
+                "La collectivité territoriale, la région ou des partenaires peuvent financer du matériel " +
+                "et accompagner la démarche NIRD, mais cela demande une stratégie lisible.",
+            choices: [
+                {
+                    labelMain: "Définir une feuille de route NIRD et la partager aux partenaires.",
+                    labelSub: "Objectifs clairs : réemploi, libre, inclusion, sobriété.",
+                    effects: {dependence: -10, durability: +15, inclusion: +10, cost: -5},
+                    feedback:
+                        "Tu donnes de la visibilité à tes partenaires et facilites le financement d’actions cohérentes. " +
+                        "La démarche devient structurée et lisible."
+                },
+                {
+                    labelMain: "Accepter tout financement sans cohérence globale.",
+                    labelSub: "Matériel neuf, plateformes diverses…",
+                    effects: {dependence: +10, durability: -10, inclusion: 0, cost: -10},
+                    feedback:
+                        "Tu obtiens du matériel, mais sans stratégie de fond, ce qui complique la maintenance et la cohérence NIRD."
+                },
+                {
+                    labelMain: "Négocier explicitement du matériel reconditionné et des services libres.",
+                    labelSub: "Inscrire ces exigences dans les appels d’offres ou conventions.",
+                    effects: {dependence: -15, durability: +20, inclusion: +5, cost: -10},
+                    feedback:
+                        "Tu utilises le levier contractuel pour aligner les moyens sur les objectifs NIRD. " +
+                        "C’est un signal fort envoyé aux acteurs du territoire."
+                }
+            ]
+        }
+    ];
+
+    // --- UTILITAIRES ---
+
+    const statKeys = ['dependence', 'durability', 'inclusion', 'cost'];
+
+    function clampState() {
+        statKeys.forEach(key => {
+            state[key] = Math.max(0, Math.min(100, state[key]));
+        });
+    }
+
+    function renderStats() {
+        clampState();
+        statKeys.forEach(key => {
+            const value = state[key];
+            const valueEl = document.querySelector(`[data-stat-value="${key}"]`);
+            const fillEl = document.querySelector(`[data-stat-fill="${key}"]`);
+            if (valueEl) valueEl.textContent = `${Math.round(value)}%`;
+            if (fillEl) {
+                fillEl.style.width = `${value}%`;
+            }
+        });
+    }
+
+    function updateVisitedCards() {
+        document.querySelectorAll('.card[data-scenario]').forEach(card => {
+            const id = card.getAttribute('data-scenario');
+            if (state.visited.has(id)) {
+                card.classList.add('visited');
+            } else {
+                card.classList.remove('visited');
+            }
+        });
+    }
+
+    function computeSummary() {
+        clampState();
+        const {dependence, durability, inclusion, cost} = state;
+        const score = Math.round(
+            (100 - dependence) * 0.4 +
+            durability * 0.3 +
+            inclusion * 0.2 +
+            (100 - cost) * 0.1
+        );
+
+        let level, badgeType, labelText;
+        if (score < 40) {
+            level = "Village très dépendant";
+            badgeType = "bad";
+            labelText = "Le village reste fortement dépendant des Big Tech.";
+        } else if (score < 80) {
+            level = "Village en transition";
+            badgeType = "neutral";
+            labelText = "Le village amorce une claire transition vers le NIRD.";
+        } else {
+            level = "Village résistant NIRD";
+            badgeType = "good";
+            labelText = "Le village incarne déjà une démarche NIRD avancée.";
+        }
+
+        return {
+            score,
+            level,
+            badgeType,
+            labelText,
+            details: {
+                dependence,
+                durability,
+                inclusion,
+                cost,
+                visitedCount: state.visited.size,
+                totalScenarios: scenarios.length
+            }
+        };
+    }
+
+    function updateSummaryPreview() {
+        const summary = computeSummary();
+        const badgeEl = document.getElementById('summary-badge');
+        const labelEl = document.getElementById('summary-label-text');
+        const previewEl = document.getElementById('summary-preview-text');
+
+        badgeEl.textContent = summary.level;
+
+        badgeEl.classList.remove('bad');
+        if (summary.badgeType === 'bad') {
+            badgeEl.classList.add('bad');
+        }
+
+        labelEl.textContent = summary.labelText;
+
+        if (summary.details.visitedCount === 0) {
+            previewEl.textContent =
+                "Aucun lieu exploré pour l’instant. Clique sur une carte pour commencer à transformer ton village.";
+        } else {
+            previewEl.textContent =
+                `Tu as déjà pris des décisions dans ${summary.details.visitedCount}/${summary.details.totalScenarios} lieux. ` +
+                `Ton score NIRD global est estimé à ${summary.score}/100. Tu peux afficher un bilan détaillé.`;
+        }
+    }
+
+    // --- MODALS ---
+
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.add('active');
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.remove('active');
+    }
+
+    // --- SCÉNARIOS ---
+
+    function openScenario(id) {
+        const scenario = scenarios.find(s => s.id === id);
+        if (!scenario) return;
+
+        const titleEl = document.getElementById('scenario-title');
+        const locationEl = document.getElementById('scenario-location');
+        const descEl = document.getElementById('scenario-description');
+        const choicesContainer = document.getElementById('scenario-choices');
+        const feedbackEl = document.getElementById('scenario-feedback');
+
+        titleEl.textContent = scenario.title;
+        locationEl.textContent = scenario.location;
+        descEl.textContent = scenario.description;
+        feedbackEl.textContent = "";
+
+        choicesContainer.innerHTML = "";
+        scenario.choices.forEach((choice, index) => {
+            const btn = document.createElement('button');
+            btn.type = "button";
+            btn.className = "btn btn-choice";
+
+            const inner = document.createElement('div');
+            inner.style.display = "flex";
+            inner.style.flexDirection = "column";
+            inner.style.alignItems = "flex-start";
+            inner.style.gap = "2px";
+
+            const line1 = document.createElement('div');
+            line1.className = "choice-label-main";
+            line1.textContent = choice.labelMain;
+
+            const line2 = document.createElement('div');
+            line2.className = "choice-label-sub";
+            line2.textContent = choice.labelSub;
+
+            const effectsLine = document.createElement('div');
+            effectsLine.className = "choice-effects";
+
+            const effects = choice.effects || {};
+            const effectText = [];
+
+            if (effects.dependence) {
+                effectText.push(formatEffect("Dépendance", effects.dependence));
+            }
+            if (effects.durability) {
+                effectText.push(formatEffect("Durabilité", effects.durability));
+            }
+            if (effects.inclusion) {
+                effectText.push(formatEffect("Inclusion", effects.inclusion));
+            }
+            if (effects.cost) {
+                effectText.push(formatEffect("Coût perçu", effects.cost));
+            }
+
+            effectsLine.innerHTML = effectText.join("");
+
+            inner.appendChild(line1);
+            inner.appendChild(line2);
+            if (effectText.length > 0) {
+                inner.appendChild(effectsLine);
+            }
+
+            btn.appendChild(inner);
+
+            btn.addEventListener('click', () => {
+                applyChoice(scenario.id, index);
+            });
+
+            choicesContainer.appendChild(btn);
+        });
+
+        openModal('scenario-modal');
+    }
+
+    function formatEffect(label, delta) {
+        const cls = delta > 0 ? "effect-plus" : "effect-minus";
+        const sign = delta > 0 ? "+" : "";
+        return `<span class="${cls}">${label} ${sign}${delta}</span>`;
+    }
+
+    function applyChoice(scenarioId, choiceIndex) {
+        const scenario = scenarios.find(s => s.id === scenarioId);
+        if (!scenario) return;
+        const choice = scenario.choices[choiceIndex];
+        if (!choice) return;
+
+        const effects = choice.effects || {};
+        Object.keys(effects).forEach(key => {
+            if (Object.prototype.hasOwnProperty.call(state, key)) {
+                state[key] += effects[key];
+            }
+        });
+
+        clampState();
+        renderStats();
+
+        state.visited.add(scenarioId);
+        updateVisitedCards();
+        updateSummaryPreview();
+
+        const feedbackEl = document.getElementById('scenario-feedback');
+        feedbackEl.textContent = choice.feedback || "";
+
+        const choicesContainer = document.getElementById('scenario-choices');
+        choicesContainer.querySelectorAll('button').forEach(btn => {
+            btn.disabled = true;
+        });
+    }
+
+    // --- BILAN ---
+
+    function openSummaryModal() {
+        const summary = computeSummary();
+        const titleEl = document.getElementById('summary-title');
+        const subtitleEl = document.getElementById('summary-subtitle');
+        const textEl = document.getElementById('summary-text');
+        const listEl = document.getElementById('summary-list');
+        const scoreEl = document.getElementById('summary-score');
+
+        titleEl.textContent = summary.level;
+        subtitleEl.textContent = "Synthèse de la démarche NIRD de ton établissement";
+
+        if (summary.details.visitedCount === 0) {
+            textEl.textContent =
+                "Tu n’as pas encore exploré le village. Clique sur quelques lieux, prends des décisions, puis reviens ici pour voir le bilan.";
+            listEl.innerHTML = "";
+            scoreEl.textContent = "";
+        } else {
+            textEl.textContent =
+                "Voici un aperçu de la situation de ton village numérique au regard des objectifs NIRD. " +
+                "Ce n’est pas une note officielle, mais un support de discussion.";
+
+            listEl.innerHTML = "";
+            const li1 = document.createElement('li');
+            li1.textContent =
+                `Dépendance aux Big Tech : ${Math.round(summary.details.dependence)}% (plus c’est bas, mieux c’est).`;
+            const li2 = document.createElement('li');
+            li2.textContent =
+                `Durabilité / réemploi : ${Math.round(summary.details.durability)}% (capacité à allonger la vie du matériel).`;
+            const li3 = document.createElement('li');
+            li3.textContent =
+                `Inclusion & accessibilité : ${Math.round(summary.details.inclusion)}% (prise en compte des publics variés).`;
+            const li4 = document.createElement('li');
+            li4.textContent =
+                `Coût perçu / complexité : ${Math.round(summary.details.cost)}% (plus c’est bas, plus c’est soutenable).`;
+            const li5 = document.createElement('li');
+            li5.textContent =
+                `Lieux explorés : ${summary.details.visitedCount}/${summary.details.totalScenarios}.`;
+
+            listEl.append(li1, li2, li3, li4, li5);
+
+            scoreEl.innerHTML =
+                `Score NIRD estimé : <strong>${summary.score}/100</strong>. ` +
+                "Utilise ce bilan comme point de départ pour imaginer un <strong>plan d’actions</strong> concret " +
+                "(priorités, prochaines étapes, acteurs à impliquer…).";
+        }
+
+        openModal('summary-modal');
+    }
+
+    // --- NAVIGATION ---
+
+    function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        const target = document.getElementById(id);
+        if (target) target.classList.add('active');
+    }
+
+    // --- INIT ---
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderStats();
+        updateVisitedCards();
+        updateSummaryPreview();
+
+        document.getElementById('start-btn').addEventListener('click', () => {
+            showScreen('village-screen');
+        });
+
+        document.getElementById('see-info-btn').addEventListener('click', () => {
+            showScreen('village-screen');
+            const panel = document.getElementById('nird-info-panel');
+            if (panel) {
+                panel.scrollIntoView({behavior: 'smooth', block: 'center'});
+            }
+        });
+
+        document.getElementById('back-home-btn').addEventListener('click', () => {
+            showScreen('home-screen');
+        });
+
+        document.querySelectorAll('.card[data-scenario]').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.getAttribute('data-scenario');
+                openScenario(id);
+            });
+        });
+
+        document.getElementById('close-scenario-btn').addEventListener('click', () => {
+            closeModal('scenario-modal');
+        });
+
+        document.getElementById('close-summary-btn').addEventListener('click', () => {
+            closeModal('summary-modal');
+        });
+
+        document.getElementById('see-summary-btn').addEventListener('click', () => {
+            openSummaryModal();
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            const backdrop = modal.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+        });
+    });
+</script>
+
+<!-- HIDDEN SNAKE – OVERLAY SECRET -->
+<div id="snake-overlay" class="snake-overlay" aria-hidden="true">
+    <div class="snake-modal" role="dialog" aria-modal="true" aria-label="Jeu Hidden Snake">
+        <div class="snake-modal-header">
+            <div class="snake-modal-title">
+                <div class="snake-modal-title-main">HIDDEN SNAKE · NIRD VILLAGE</div>
+                <div class="snake-modal-title-sub">
+                    Flèches ou ZQSD pour bouger · Espace = pause · Échap = fermer
+                </div>
+            </div>
+            <div>
+                <span class="snake-tag-secret">
+                    <span class="snake-tag-dot"></span>
+                    MODE SECRET
+                </span>
+                <button type="button" class="snake-close-btn" id="snake-close-btn">
+                    <span class="snake-close-pip"></span>
+                    <span>Fermer</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="snake-screen">
+            <div class="snake-screen-top">
+                <span>NIRD OS · PROTO 1.0</span>
+                <span>HIDDEN SNAKE</span>
+                <span id="snake-status-label">EN JEU</span>
+            </div>
+            <div class="snake-canvas-wrap">
+                <canvas id="snake-canvas" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <aside class="snake-hud">
+            <div class="snake-hud-title">TABLEAU DE BORD</div>
+            <div class="snake-hud-stats">
+                <div class="snake-stat-card">
+                    <span class="snake-stat-label">Score</span>
+                    <span class="snake-stat-value" id="snake-score">000</span>
+                </div>
+                <div class="snake-stat-card">
+                    <span class="snake-stat-label">Meilleur score</span>
+                    <span class="snake-stat-value" id="snake-best">000</span>
+                </div>
+                <div class="snake-stat-card">
+                    <span class="snake-stat-label">Vitesse</span>
+                    <span class="snake-speed-indicator">
+                        <span class="snake-speed-bar" id="snake-speed-1"></span>
+                        <span class="snake-speed-bar" id="snake-speed-2"></span>
+                        <span class="snake-speed-bar" id="snake-speed-3"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="snake-hud-controls">
+                <p>
+                    <span class="snake-key">↑</span>
+                    <span class="snake-key">↓</span>
+                    <span class="snake-key">←</span>
+                    <span class="snake-key">→</span>
+                    ou
+                    <span class="snake-key">Z</span>
+                    <span class="snake-key">Q</span>
+                    <span class="snake-key">S</span>
+                    <span class="snake-key">D</span>
+                </p>
+                <p style="margin-top:4px;">
+                    <span class="snake-key">Espace</span> = pause,
+                    <span class="snake-key">Esc</span> = fermer.
+                </p>
+            </div>
+
+            <div class="snake-hud-footer">
+                <div class="snake-combo">TAPE&nbsp;S&nbsp;N&nbsp;A&nbsp;K&nbsp;E POUR ACTIVER</div>
+                <div class="snake-status-pill" id="snake-status-pill">
+                    <span class="snake-status-dot"></span>
+                    <span id="snake-status-text">EN LIGNE</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+<!-- /HIDDEN SNAKE – OVERLAY SECRET -->
+
+<!-- SCRIPT SPLASH KLUB -->
+<script>
+    window.addEventListener('load', function () {
+        const splash = document.getElementById('splash');
+        if (!splash) return;
+
+        setTimeout(function () {
+            splash.classList.add('splash--hidden');
+        }, 1800);
+
+        splash.addEventListener('transitionend', function () {
+            splash.style.display = 'none';
+        });
+    });
+
+    (function () {
+    const SECRET = "SNAKE";
+    let buffer = "";
+
+    const gridSize = 20;
+    const initialSpeed = 140;
+    const minSpeed = 70;
+    const speedStep = 10;
+
+    let canvas, ctx;
+    let snake = [];
+    let direction = {x: 1, y: 0};
+    let nextDirection = {x: 1, y: 0};
+    let food = null;
+    let intervalId = null;
+    let running = false;
+    let paused = false;
+    let score = 0;
+    let bestScore = 0;
+    let speed = initialSpeed;
+
+    function openOverlay() {
+        const overlay = document.getElementById("snake-overlay");
+        if (!overlay) return;
+        overlay.classList.add("open");
+        resetGame();
+        startLoop();
+    }
+
+    function closeOverlay() {
+        const overlay = document.getElementById("snake-overlay");
+        if (!overlay) return;
+        overlay.classList.remove("open");
+        stopLoop();
+    }
+
+    function resetGame() {
+        canvas = document.getElementById("snake-canvas");
+        if (!canvas) return;
+        ctx = canvas.getContext("2d");
+
+        // taille logique du canvas
+        if (!canvas.width || canvas.width === 0) {
+            canvas.width = canvas.clientWidth || 400;
+            canvas.height = canvas.width;
+        }
+
+        score = 0;
+        speed = initialSpeed;
+        direction = {x: 1, y: 0};
+        nextDirection = {x: 1, y: 0};
+        snake = [
+            {x: 8, y: 10},
+            {x: 7, y: 10},
+            {x: 6, y: 10}
+        ];
+        placeFood();
+        updateScore();
+        updateSpeedUi();
+        setStatus("EN LIGNE", false);
+        paused = false;
+        running = true;
+        draw();
+    }
+
+    function startLoop() {
+        stopLoop();
+        intervalId = setInterval(tick, speed);
+    }
+
+    function stopLoop() {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+
+    function tick() {
+        if (!running || paused) return;
+
+        direction = nextDirection;
+        const head = {x: snake[0].x, y: snake[0].y};
+        head.x += direction.x;
+        head.y += direction.y;
+
+        if (head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize || isOnSnake(head)) {
+            gameOver();
+            return;
+        }
+
+        snake.unshift(head);
+
+        if (food && head.x === food.x && head.y === food.y) {
+            score += 10;
+            if (speed > minSpeed) {
+                speed -= speedStep;
+                startLoop();
+            }
+            if (score > bestScore) bestScore = score;
+            updateScore();
+            updateSpeedUi();
+            flashCanvas();
+            placeFood();
+        } else {
+            snake.pop();
+        }
+
+        draw();
+    }
+
+    function gameOver() {
+        running = false;
+        setStatus("HORS LIGNE", true);
+        stopLoop();
+    }
+
+    function isOnSnake(pos) {
+        for (let i = 0; i < snake.length; i++) {
+            if (snake[i].x === pos.x && snake[i].y === pos.y) return true;
+        }
+        return false;
+    }
+
+    function placeFood() {
+        let x, y;
+        do {
+            x = Math.floor(Math.random() * gridSize);
+            y = Math.floor(Math.random() * gridSize);
+        } while (isOnSnake({x: x, y: y}));
+        food = {x: x, y: y};
+    }
+
+    function drawRoundRect(x, y, w, h, r) {
+        const radius = Math.min(r, w / 2, h / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + w - radius, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + radius);
+        ctx.lineTo(x + w, y + h - radius);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - radius, y + h);
+        ctx.lineTo(x + radius, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function draw() {
+        if (!ctx || !canvas) return;
+        const size = canvas.width;
+        const cell = size / gridSize;
+
+        ctx.clearRect(0, 0, size, size);
+
+        // fond
+        const bgGrad = ctx.createRadialGradient(
+            size / 2, size / 2, size * 0.05,
+            size / 2, size / 2, size * 0.7
+        );
+        bgGrad.addColorStop(0, "#020617");
+        bgGrad.addColorStop(1, "#000000");
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, size, size);
+
+        // grille
+        ctx.strokeStyle = "rgba(30,64,175,0.15)";
+        ctx.lineWidth = 1;
+        for (let i = 0; i <= gridSize; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * cell + 0.5, 0);
+            ctx.lineTo(i * cell + 0.5, size);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(0, i * cell + 0.5);
+            ctx.lineTo(size, i * cell + 0.5);
+            ctx.stroke();
+        }
+
+        // pomme
+        if (food) {
+            const fx = food.x * cell;
+            const fy = food.y * cell;
+            const radius = cell * 0.45;
+            const cx = fx + cell / 2;
+            const cy = fy + cell / 2;
+            const foodGrad = ctx.createRadialGradient(
+                cx - radius * 0.3, cy - radius * 0.3, radius * 0.2,
+                cx, cy, radius
+            );
+            foodGrad.addColorStop(0, "#facc15");
+            foodGrad.addColorStop(1, "#f97316");
+            ctx.fillStyle = foodGrad;
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // serpent
+        for (let i = 0; i < snake.length; i++) {
+            const seg = snake[i];
+            const sx = seg.x * cell;
+            const sy = seg.y * cell;
+            const margin = cell * 0.12;
+            const x = sx + margin;
+            const y = sy + margin;
+            const w = cell - margin * 2;
+            const h = cell - margin * 2;
+
+            const grad = ctx.createLinearGradient(x, y, x + w, y + h);
+            if (i === 0) {
+                grad.addColorStop(0, "#22c55e");
+                grad.addColorStop(1, "#4ade80");
+            } else {
+                grad.addColorStop(0, "#16a34a");
+                grad.addColorStop(1, "#065f46");
+            }
+            ctx.fillStyle = grad;
+            drawRoundRect(x, y, w, h, cell * 0.2);
+
+            // yeux
+            if (i === 0) {
+                ctx.fillStyle = "rgba(15,23,42,0.9)";
+                const eyeSize = cell * 0.08;
+                const ex = x + w * 0.7;
+                const ey = y + h * 0.35;
+                ctx.beginPath();
+                ctx.arc(ex, ey, eyeSize, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(ex - cell * 0.18, ey, eyeSize, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+    }
+
+    function updateScore() {
+        const scoreEl = document.getElementById("snake-score");
+        const bestEl = document.getElementById("snake-best");
+        if (scoreEl) scoreEl.textContent = String(score).padStart(3, "0");
+        if (bestEl) bestEl.textContent = String(bestScore).padStart(3, "0");
+    }
+
+    function updateSpeedUi() {
+        const rel = (initialSpeed - speed) / (initialSpeed - minSpeed);
+        const lvl = rel <= 0 ? 1 : (rel < 0.5 ? 2 : 3);
+        for (let i = 1; i <= 3; i++) {
+            const bar = document.getElementById("snake-speed-" + i);
+            if (!bar) continue;
+            if (i <= lvl) bar.classList.add("active");
+            else bar.classList.remove("active");
+        }
+    }
+
+    function setStatus(text, dead) {
+        const label = document.getElementById("snake-status-label");
+        const pill = document.getElementById("snake-status-pill");
+        const pillText = document.getElementById("snake-status-text");
+        if (label) label.textContent = text;
+        if (pillText) pillText.textContent = text;
+        if (pill) {
+            if (dead) pill.classList.add("dead");
+            else pill.classList.remove("dead");
+        }
+    }
+
+    function flashCanvas() {
+        const wrap = document.querySelector(".snake-canvas-wrap");
+        if (!wrap) return;
+        wrap.classList.remove("flash");
+        void wrap.offsetWidth; // reset animation
+        wrap.classList.add("flash");
+    }
+
+    function handleDirectionKey(key) {
+        let newDir = null;
+        if (key === "ArrowUp" || key === "z" || key === "Z" || key === "w" || key === "W") {
+            newDir = {x: 0, y: -1};
+        } else if (key === "ArrowDown" || key === "s" || key === "S") {
+            newDir = {x: 0, y: 1};
+        } else if (key === "ArrowLeft" || key === "q" || key === "Q" || key === "a" || key === "A") {
+            newDir = {x: -1, y: 0};
+        } else if (key === "ArrowRight" || key === "d" || key === "D") {
+            newDir = {x: 1, y: 0};
+        }
+        if (!newDir) return;
+        if (newDir.x === -direction.x && newDir.y === -direction.y) return;
+        nextDirection = newDir;
+    }
+
+    function isTypingInForm() {
+        const el = document.activeElement;
+        if (!el) return false;
+        const tag = el.tagName;
+        return tag === "INPUT" || tag === "TEXTAREA" || el.isContentEditable === true;
+    }
+
+    function handleSecretCombo(key) {
+        const k = key.toUpperCase();
+        if (k.length !== 1 || k < "A" || k > "Z") return;
+        buffer = (buffer + k).slice(-SECRET.length);
+        if (buffer === SECRET) {
+            openOverlay();
+        }
+    }
+
+    // gestion clavier globale
+    document.addEventListener("keydown", function (e) {
+        if (isTypingInForm()) return;
+
+        const overlay = document.getElementById("snake-overlay");
+        const isOpen = overlay && overlay.classList.contains("open");
+
+        // pas ouvert -> on écoute juste la combo secrète
+        if (!isOpen) {
+            handleSecretCombo(e.key);
+            return;
+        }
+
+        // déjà ouvert -> contrôles du jeu
+        if (e.key === "Escape") {
+            e.preventDefault();
+            closeOverlay();
+            return;
+        }
+
+        if (e.key === " " || e.key === "Spacebar") {
+            e.preventDefault();
+            paused = !paused;
+            setStatus(paused ? "EN PAUSE" : "EN LIGNE", false);
+            return;
+        }
+
+        handleDirectionKey(e.key);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const closeBtn = document.getElementById("snake-close-btn");
+        const overlay = document.getElementById("snake-overlay");
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                closeOverlay();
+            });
+        }
+
+        if (overlay) {
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) {
+                    closeOverlay();
+                }
+            });
+        }
+
+        canvas = document.getElementById("snake-canvas");
+        if (canvas) {
+            canvas.width = canvas.clientWidth || 400;
+            canvas.height = canvas.width;
+        }
+        });
+    })();
+</script>
+
+</body>
+</html>

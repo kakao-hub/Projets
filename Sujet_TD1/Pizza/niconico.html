@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ニコニコ風コメントデモ</title>
+<style>
+  body { margin:0; background:#111; color:#fff; font-family: sans-serif; height:100vh; display:flex; align-items:center; justify-content:center; }
+  .video-wrap {
+    position: relative;
+    width: 900px;
+    height: 506px; /* 16:9 の例 */
+    background: linear-gradient(90deg,#333,#222);
+    overflow: hidden;
+    border-radius:8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  }
+
+  /* コメント用レイヤー（上に流す） */
+  .danmaku-layer {
+    position:absolute;
+    inset:0;
+    pointer-events: none; /* コメントにマウスイベントを通さない */
+  }
+
+  .danmaku {
+    position: absolute;
+    white-space: nowrap;
+    font-weight:700;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    font-size: 20px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    transform: translateX(100%); /* 右外からスタート */
+    will-change: transform;
+  }
+
+  /* 簡易コントロールUI（デモ用） */
+  .controls { margin-top: 16px; display:flex; gap:8px; align-items:center; }
+  input[type="text"] { padding:6px 8px; font-size:14px; width:320px; }
+  button { padding:7px 10px; font-size:14px; cursor:pointer; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="video-wrap" id="video">
+      <div class="danmaku-layer" id="layer"></div>
+    </div>
+
+    <div class="controls">
+      <input id="text" type="text" placeholder="コメントを入力（例: すごい！）" />
+      <button id="send">流す</button>
+      <button id="auto">自動で流す</button>
+    </div>
+  </div>
+
+<script>
+(() => {
+  const layer = document.getElementById('layer');
+  const sendBtn = document.getElementById('send');
+  const textInput = document.getElementById('text');
+  const autoBtn = document.getElementById('auto');
+
+  const videoRect = document.getElementById('video').getBoundingClientRect();
+  const LAYER_WIDTH = videoRect.width;
+  const LAYER_HEIGHT = videoRect.height;
+
+  // トラック（行）管理
+  const TRACK_HEIGHT = 28; // 1行あたり高さ（フォントサイズに合わせて調整）
+  const trackCount = Math.floor(LAYER_HEIGHT / TRACK_HEIGHT);
+  const tracks = new Array(trackCount).fill(0); // 各トラックにおける「次に使用できる時間（ms）」を保持
+
+  // コメントを作って流す関数
+  function createDanmaku(text, options = {}) {
+    const el = document.createElement('div');
+    el.className = 'danmaku';
+    el.textContent = text;
+    // スタイル差し替え（色・サイズなど）
+    if (options.color) el.style.color = options.color;
+    if (options.size) el.style.fontSize = options.size + 'px';
+    layer.appendChild(el);
+
+    // 横幅が確定するまで待つ（フォントロード等）
+    requestAnimationFrame(() => {
+      const width = el.offsetWidth;
+      // トラック割り当て（現在時刻より遅延が短いトラックを探す）
+      const now = performance.now();
+      let chosenTrack = 0;
+      let earliest = Infinity;
+      for (let i=0;i<tracks.length;i++) {
+        if (tracks[i] <= now) { chosenTrack = i; earliest = tracks[i]; break; }
+        if (tracks[i] < earliest) { earliest = tracks[i]; chosenTrack = i; }
+      }
+      // y位置
+      const y = chosenTrack * TRACK_HEIGHT + (TRACK_HEIGHT - parseInt(getComputedStyle(el).fontSize || 20))/2;
+      el.style.top = `${y}px`;
+      // スピード（px/ms）：長めのコメントは速くするなどカスタマイズ可
+      const baseSpeed = 0.08; // px per ms
+      const speed = (options.speed || baseSpeed) + Math.min(0.001 * width, 0.06);
+      // アニメーション長さ（コメントが完全に左に消えるまでの時間）
+      const distance = LAYER_WIDTH + width;
+      const duration = distance / speed; // ms
+
+      // このトラックが次に空く時刻を記録（現在 + time until comment is sufficiently left）
+      // 安全に半分横幅分流れたら次のコメントを入れられるようにする
+      const safeDelay = (LAYER_WIDTH + width) / speed * 0.35;
+      tracks[chosenTrack] = now + safeDelay;
+
+      // 初期位置（右外）から、左方向へ動かすループ
+      let start = performance.now();
+      function step(ts) {
+        const elapsed = ts - start;
+        const x = LAYER_WIDTH - (elapsed * speed); // left position relative to left edge
+        el.style.transform = `translateX(${x}px)`; // using translateX for smoother animation
+        if (elapsed < duration) {
+          requestAnimationFrame(step);
+        } else {
+          // 完全に消えたら要素を除去
+          el.remove();
+        }
+      }
+      requestAnimationFrame(step);
+
+      // ホバーで一時停止（便利機能）
+      let paused = false;
+      let pauseAt = 0;
+      el.addEventListener('mouseenter', () => {
+        if (paused) return;
+        paused = true;
+        // capture current transform value
+        const style = getComputedStyle(el);
+        const matrix = style.transform;
+        // get computed translateX if possible
+        // For simplicity, set pointer-events none on layer so this won't usually fire during playback.
+      });
+      // （注：上のホバーは簡易例。ポーズ復帰処理を厳密に行うなら速度・startタイムの再計算が必要）
+    });
+  }
+
+  // 送信ボタン
+  sendBtn.addEventListener('click', () => {
+    const txt = textInput.value.trim();
+    if (!txt) return;
+    createDanmaku(txt, { color: '#fff' });
+    textInput.value = '';
+  });
+
+  // 自動でランダムコメント流す（デモ）
+  let auto = false;
+  let autoTimer = null;
+  autoBtn.addEventListener('click', () => {
+    auto = !auto;
+    autoBtn.textContent = auto ? '自動停止' : '自動で流す';
+    if (auto) {
+      autoTimer = setInterval(() => {
+        const sample = [
+          'うおおお！', '神プレイ', '草', 'かわいい', 'やばい', 'おつ', 'すごい', 'いいね！',
+          '懐かしい', 'ｗｗｗ', 'やったね', 'コメントテスト', '速度調整OK'
+        ];
+        const text = sample[Math.floor(Math.random()*sample.length)];
+        // ランダム色・サイズ
+        const color = Math.random() > 0.8 ? '#ff9' : '#fff';
+        const size = 16 + Math.floor(Math.random()*12);
+        createDanmaku(text, { color, size });
+      }, 700);
+    } else {
+      clearInterval(autoTimer);
+    }
+  });
+
+  // 初期サンプル
+  ['ようこそ！','これはデモです','ニコニコ風コメント'].forEach((t, i) => {
+    setTimeout(()=> createDanmaku(t), i*400);
+  });
+
+})();
+</script>
+</body>
+</html>
